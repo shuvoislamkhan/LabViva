@@ -1,7 +1,7 @@
+//solution of /Linear Polynomial (Degree #1) (Ex: ax+b=0)
 #include <iostream>
 using namespace std;
-
-int main() {
+int main(){
     double a, b;
     cout << "Enter a and b (for ax + b = 0): ";
     cin >> a >> b;
@@ -11,6 +11,5 @@ int main() {
     } else {
         cout << "Solution: x = " << -b / a << endl;
     }
-
     return 0;
 }
