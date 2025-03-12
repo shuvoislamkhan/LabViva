@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -11,5 +11,6 @@ int main() {
     } else {
         cout << "Solution: x = " << -b / a << endl;
     }
+
     return 0;
 }

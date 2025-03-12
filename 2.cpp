@@ -1,16 +1,28 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() {
-    double a, b;
-    cout << "Enter a and b (for ax + b = 0): ";
-    cin >> a >> b;
+    double a, b, c;
+    cout << "Enter a, b, c: ";
+    cin >> a >> b >> c;
 
-    if (a == 0) {
-        cout << (b == 0 ? "Infinite solutions." : "No solution.") << endl;
-    } else {
-        cout << "Solution: x = " << -b / a << endl;
+    double d = b * b - 4 * a * c; // Discriminant
+
+    if (d > 0) {
+        double r1 = (-b + sqrt(d)) / (2 * a);
+        double r2 = (-b - sqrt(d)) / (2 * a);
+        cout << "Roots are real and distinct: " << r1 << " , " << r2 << endl;
     }
-
+    else if (d == 0) {
+        double r = -b / (2 * a);
+        cout << "Roots are real and equal: " << r << endl;
+    }
+    else {
+        double realP = -b / (2 * a);
+        double imaP = sqrt(-d) / (2 * a);
+        cout << "Roots are complex: " << realP << " + " << imaP << " i and " << realP << " - " << imaP << " i" << endl;
+    }
     return 0;
 }
+

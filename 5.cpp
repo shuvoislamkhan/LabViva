@@ -1,52 +1,46 @@
 #include <iostream>
 #include <cmath>
-
 using namespace std;
-
-// Function to calculate the value of f(x) = ax^4 + bx^3 + cx^2 + dx + e
-double f(double x, double a, double b, double c, double d, double e) {
-    return a * x * x * x * x + b * x * x * x + c * x * x + d * x + e;
+// Define the function f(x) = ax^4 + bx^3 + cx^2 + dx + e
+double f(double x, double a, double b, double c, double d)
+{
+return a * pow(x, 3) + b * pow(x, 2) + c * x + d;
 }
-
-// Function to calculate the derivative f'(x) = 4ax^3 + 3bx^2 + 2cx + d
-double f_prime(double x, double a, double b, double c, double d) {
-    return 4 * a * x * x * x + 3 * b * x * x + 2 * c * x + d;
+double df(double x, double a, double b, double c)
+{
+return 3 * a * pow(x, 2) + 2 * b * x + c;
 }
-
-// Newton-Raphson method to find roots
-double newtonRaphson(double a, double b, double c, double d, double e, double initialGuess, int maxIterations = 1000, double tolerance = 1e-6) {
-    double x = initialGuess;
-    for (int i = 0; i < maxIterations; ++i) {
-        double fx = f(x, a, b, c, d, e);
-        double fx_prime = f_prime(x, a, b, c, d);
-
-        if (fabs(fx) < tolerance) {
-            return x; // Found root within tolerance
-        }
-
-        if (fx_prime == 0) {
-            cout << "Derivative is zero, cannot continue." << endl;
-            return x; // Derivative zero, avoid division by zero
-        }
-
-        x = x - fx / fx_prime; // Newton-Raphson iteration
-    }
-
-    cout << "Max iterations reached." << endl;
-    return x;
+// Newton-Raphson method to find root
+double newtonRaphson(double a, double b, double c, double d, double x0, double tol = 1e-6, int
+max_iter = 1000)
+{
+double x = x0;
+for (int i = 0; i < max_iter; i++)
+{
+double fx = f(x, a, b, c, d);
+double dfx = df(x, a, b, c);
+if (fabs(dfx) < 1e-9)
+{ // Avoid division by zero
+cout << "Derivative too small, stopping iteration." << endl;
+return x;
 }
-
-int main() {
-    double a, b, c, d, e;
-    cout << "Enter coefficients a, b, c, d, e: ";
-    cin >> a >> b >> c >> d >> e;
-
-    double initialGuess;
-    cout << "Enter initial guess: ";
-    cin >> initialGuess;
-
-    double root = newtonRaphson(a, b, c, d, e, initialGuess);
-    cout << "Found root: " << root << endl;
-
-    return 0;
+double x_new = x - fx / dfx;
+if (fabs(x_new - x) < tol){
+return x_new;
+}
+x = x_new;
+}
+cout << "Max iterations reached, solution may not be accurate." << endl;
+return x;
+}
+int main()
+{
+double a, b, c, d, x0;
+cout << "Enter coefficients a, b, c, d: ";
+cin >> a >> b >> c >> d;
+cout << "Enter initial guess: ";
+cin >> x0;
+double root = newtonRaphson(a, b, c, d, x0);
+cout << "Approximate root: " << root << endl;
+return 0;
 }
