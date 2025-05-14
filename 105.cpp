@@ -37,12 +37,12 @@ max_iter = 1000)
 }
 int main()
 {
-double a, b, c, d, x0;
-cout << "Enter coefficients a, b, c, d: ";
-cin >> a >> b >> c >> d;
-cout << "Enter initial guess: ";
-cin >> x0;
-double root = newtonRaphson(a, b, c, d, x0);
-cout << "Approximate root: " << root << endl;
-return 0;
+    double a, b, c, d, x0;
+    cout << "Enter coefficients a, b, c, d: ";
+    cin >> a >> b >> c >> d;
+    cout << "Enter initial guess: ";
+    cin >> x0;
+    double root = newtonRaphson(a, b, c, d, x0);
+    cout << "Approximate root: " << root << endl;
+    return 0;
 }

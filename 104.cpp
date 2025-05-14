@@ -4,12 +4,12 @@
 using namespace std;
 double f(double x, double a, double b, double c, double d, double e)
 {
-return a * pow(x, 4) + b * pow(x, 3) + c * pow(x, 2) + d * x + e;
+    return a * pow(x, 4) + b * pow(x, 3) + c * pow(x, 2) + d * x + e;
 }
 // Define the derivative f'(x)
 double df(double x, double a, double b, double c, double d)
 {
-return 4 * a * pow(x, 3) + 3 * b * pow(x, 2) + 2 * c * x + d;
+    return 4 * a * pow(x, 3) + 3 * b * pow(x, 2) + 2 * c * x + d;
 }
 // Newton-Raphson method to find root
 double newtonRaphson(double a, double b, double c, double d, double e, double x0, double tol =
