@@ -13,8 +13,7 @@ double df(double x, double a, double b, double c, double d) {
 double newtonRaphson(double a, double b, double c, double d, double e, double x0, double tol =
 1e-6, int max_iter = 1000) {
     double x = x0;
-    for (int i = 0; i < max_iter; i++)
-    {
+    for (int i = 0; i < max_iter; i++) {
         double fx = f(x, a, b, c, d, e);
         double dfx = df(x, a, b, c, d);
         if (fabs(dfx) < tol) {
@@ -31,8 +30,7 @@ double newtonRaphson(double a, double b, double c, double d, double e, double x0
     cout << "Max iterations reached, solution may not be accurate." << endl;
     return x;
 }
-int main()
-{
+int main() {
     double a, b, c, d, e, x0;
     cout << "Enter coefficients a, b, c, d, e: ";
     cin >> a >> b >> c >> d >> e;

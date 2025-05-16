@@ -67,7 +67,8 @@ int main() {
     cin >> x0;
     if (x0 <= 0) {
         cout << "Invalid guess! x must be positive for log(x)." << endl;
-    } else {
+    }
+    else {
         cout << "Root: " << newtonRaphson(f3, df3, x0) << endl;
     }
 

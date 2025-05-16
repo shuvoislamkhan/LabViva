@@ -30,8 +30,7 @@ max_iter = 1000) {
     cout << "Max iterations reached, solution may not be accurate." << endl;
     return x;
 }
-int main()
-{
+int main() {
     double a, b, c, d, e, x0;
     cout << "Enter coefficients a, b, c, d, e: ";
     cin >> a >> b >> c >> d >> e;
