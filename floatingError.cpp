@@ -10,14 +10,14 @@ int main() {
     cin >> x;
 
     // Method 1: Using pow()
-    double result_pow = pow(x, 2) + 1;
+    double result_pow = pow(x, 4) + pow(x, 3) + pow(x, 2) + x + 1; ;
 
     // Method 2: Using direct multiplication
-    double result_direct = x * x + 1;
+    double result_direct = x * x * x * x + x * x * x + x * x + x + 1;;
 
     // Print both results
-    cout << "Using pow(x, 2) + 1: " << result_pow << endl;
-    cout << "Using x * x + 1: " << result_direct << endl;
+    cout << "Using pow: " << result_pow << endl;
+    cout << "Using direct multiplication: " << result_direct << endl;
 
     // Difference between results
     cout << "Difference: " << fabs(result_pow - result_direct) << endl;
