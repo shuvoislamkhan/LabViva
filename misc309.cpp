@@ -16,7 +16,6 @@ int main() {
         cout << "Matrix multiplication not possible!" << endl;
         return 0;
     }
-
     int A[r1][c1], B[r2][c2], result[r1][c2];
 
     // Input for first matrix
@@ -35,24 +34,17 @@ int main() {
         }
     }
 
-    // Multiplication process
+    // Multiplication process and Printing result
+    cout << "Resultant Matrix:" << endl;
     for (int i = 0; i < r1; i++) {
         for (int j = 0; j < c2; j++) {
             result[i][j]=0;
             for (int k = 0; k < c1; k++) {
                 result[i][j] += A[i][k] * B[k][j];
             }
-        }
-    }
-
-    // Printing result
-    cout << "Resultant Matrix:" << endl;
-    for (int i = 0; i < r1; i++) {
-        for (int j = 0; j < c2; j++) {
             cout << result[i][j] << " ";
         }
         cout << endl;
     }
-
     return 0;
 }

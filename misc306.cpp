@@ -53,9 +53,9 @@ int main() {
         }
         // Output the solution
         cout << fixed << setprecision(3);
-        cout << "Solution:\n";
-        cout << "x = " << result[0] << "\n";
-        cout << "y = " << result[1] << "\n";
+        cout << "Solution:" << endl;
+        cout << "x = " << result[0] << endl;
+        cout << "y = " << result[1] << endl;
         cout << "z = " << result[2] << endl;
     }
     return 0;

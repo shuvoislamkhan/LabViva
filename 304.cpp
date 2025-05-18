@@ -46,7 +46,7 @@ int main()
         z = detAz / detA;
 
         // Output results
-        cout << "\nSolution of the system:\n";
+        cout << "Solution of the system: " << endl;
         cout << "x = " << x << endl;
         cout << "y = " << y << endl;
         cout << "z = " << z << endl;
