@@ -3,16 +3,14 @@
 using namespace std;
 
 // Function to calculate the determinant of a 3x3 matrix
-double determinant(double A[3][3])
-{
+double determinant(double A[3][3]) {
     return A[0][0] * (A[1][1] * A[2][2] - A[1][2] * A[2][1]) -
            A[0][1] * (A[1][0] * A[2][2] - A[1][2] * A[2][0]) +
            A[0][2] * (A[1][0] * A[2][1] - A[1][1] * A[2][0]);
 }
 
 // Function to calculate the inverse of a 3x3 matrix
-bool inverseMatrix(double A[3][3], double inverse[3][3])
-{
+bool inverseMatrix(double A[3][3], double inverse[3][3]) {
     double det = determinant(A);
     if (det == 0) {
         cout << "Matrix is singular, no unique solution exists." << endl;
@@ -42,8 +40,7 @@ bool inverseMatrix(double A[3][3], double inverse[3][3])
 }
 
 // Function to multiply two matrices (3x3 and 3x1)
-void multiplyMatrix(double A[3][3], double B[3], double result[3])
-{
+void multiplyMatrix(double A[3][3], double B[3], double result[3]) {
     for (int i = 0; i < 3; i++) {
         result[i] = 0;
         for (int j = 0; j < 3; j++) {
@@ -52,8 +49,7 @@ void multiplyMatrix(double A[3][3], double B[3], double result[3])
     }
 }
 
-int main()
-{
+int main() {
     // Define the coefficients of the matrix A (3x3)
     double A[3][3] = {
         {1, 1, 1},     // x + y + z = 25
