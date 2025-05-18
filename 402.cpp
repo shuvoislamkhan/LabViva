@@ -31,8 +31,9 @@ int main() {
     cin >> x;
     cout << "Enter step size h: ";
     cin >> h;
-
-    cout << "\nResults:\n";
+    
+    cout << endl;
+    cout << "Results:" << endl;
     cout << "Forward Difference:  " << forward_diff(x, h) << endl;
     cout << "Backward Difference: " << backward_diff(x, h) << endl;
     cout << "Central Difference:  " << central_diff(x, h) << endl;
