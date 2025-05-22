@@ -8,7 +8,7 @@ int main() {
     cout << "Enter number of rows and columns: ";
     cin >> rows >> cols;
 
-    int matrix1[rows][cols], matrix2[rows][cols], sum[rows][cols];
+    int matrix1[rows][cols], matrix2[rows][cols];
 
     // Input for first matrix
     cout << "Enter elements of first matrix:" << endl;
