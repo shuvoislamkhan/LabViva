@@ -18,13 +18,13 @@ max_iter = 1000) {
         double fx = f(x, a, b, c, d);
         double dfx = df(x, a, b, c);
         if (fabs(dfx) < 1e-9) {
-        // Avoid division by zero
-        cout << "Derivative too small, stopping iteration." << endl;
-        return x;
-        }
-        double x_new = x - fx / dfx;
-        if (fabs(x_new - x) < tol){
-        return x_new;
+            // Avoid division by zero
+            cout << "Derivative too small, stopping iteration." << endl;
+            return x;
+            }
+            double x_new = x - fx / dfx;
+            if (fabs(x_new - x) < tol) {
+            return x_new;
         }
         x = x_new;
     }
