@@ -13,7 +13,7 @@ int main() {
     // Define the constants on the right-hand side (d1, d2, d3)
     double B[3] = {25, 0, 6};
 
-    double inverse[3][3], result[3];;
+    double inverse[3][3], result[3];
 
     double det = A[0][0] * (A[1][1] * A[2][2] - A[1][2] * A[2][1]) -
                  A[0][1] * (A[1][0] * A[2][2] - A[1][2] * A[2][0]) +
